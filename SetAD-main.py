@@ -381,7 +381,6 @@ def parse_args():
     parser.add_argument('--dataset', default='Cardiotocography.json', type=str, help='Dataset') 
     parser.add_argument('--batch_size', default=512, type=int, help='Batch size, you may increase it when dealing with large datasets')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='Learning rate')
-    parser.add_argument('--specify_anomaly_ratio', default=False, type=bool, help='Whether to specify the ratio of anomalies')
     parser.add_argument('--labeled_ratio', default=0.05, type=float, help='Ratio of labeled anomalies')
     parser.add_argument('--contamination_rate', default=0.02, type=float, help='Ratio of unlabeled anomalies in the training set')
     parser.add_argument('--seq_len', default=2, type=int, help='Length of the sequence')
@@ -411,3 +410,4 @@ if config.o:
         f.write(str(rocs)+'\n')
         f.write(str(prns)+'\n')
         f.write(str(np.mean(rocs))+'  ' +str(np.mean(prns))+'\n\n')
+

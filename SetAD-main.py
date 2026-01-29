@@ -392,10 +392,6 @@ config = parse_args()
 seed_list = range(10)
 rocs = []
 prns = []
-cad_rocs = []
-cad_prns = []
-dev_rocs = []
-dev_prns = []
 for seed in seed_list:
     run(config, rocs, prns, seed)
     print(rocs)
@@ -410,4 +406,5 @@ if config.o:
         f.write(str(rocs)+'\n')
         f.write(str(prns)+'\n')
         f.write(str(np.mean(rocs))+'  ' +str(np.mean(prns))+'\n\n')
+
 

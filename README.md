@@ -1,5 +1,5 @@
 # SetAD
-SetAD is implemented using PyTorch. You may need the packages below to run CAD:
+SetAD is implemented using PyTorch. You may need the packages below to run SetAD:
 
 - numpy==1.23.1
 - torch==1.13.1

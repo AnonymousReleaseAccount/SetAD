@@ -113,8 +113,5 @@ For AUC-ROC, SetAD is significantly better than GANomaly, DevNet, DeepSAD,
   FEAWAD, and PReNet after Holm correction. The difference from REPEN is not
   statistically significant.
   
-  The tests above are computed from the four-decimal dataset means displayed in
-  the tables. For the final archival version, the same script should be run on
-  the unrounded dataset-level means if those values are available.
 
 

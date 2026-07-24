@@ -68,3 +68,53 @@ the sample standard deviation (`ddof=1`) across the 10 runs.
 | Campaign | 0.6623 +/- 0.0536 | 0.8066 +/- 0.0172 | 0.8078 +/- 0.0185 | 0.7624 +/- 0.0272 | 0.7986 +/- 0.0191 | 0.7976 +/- 0.0216 | 0.8706 +/- 0.0059 | 0.8813 +/- 0.0140 |
 | Fraud | 0.8309 +/- 0.1160 | 0.9703 +/- 0.0091 | 0.9428 +/- 0.0227 | 0.9450 +/- 0.0162 | 0.9466 +/- 0.0179 | 0.9477 +/- 0.0271 | OOM | 0.9710 +/- 0.0137 |
 | Census | 0.6670 +/- 0.0431 | 0.8995 +/- 0.0027 | 0.8125 +/- 0.0171 | 0.7603 +/- 0.0218 | 0.8097 +/- 0.0304 | 0.8118 +/- 0.0232 | OOM | 0.8984 +/- 0.0051 |
+
+## Statistical Significance Across Datasets
+
+For each metric, we compare SetAD with every baseline that has results on all
+10 datasets: GANomaly, REPEN, DevNet, DeepSAD, FEAWAD, and PReNet. Each dataset
+contributes one paired observation, namely the 10-run mean reported above.
+We use a two-sided exact Wilcoxon signed-rank test across the 10 datasets.
+Holm correction is applied separately within AUC-PR and AUC-ROC over the six
+SetAD-versus-baseline comparisons. SSIF is excluded from this analysis because
+it encounters OOM on four datasets and therefore does not provide a complete
+10-dataset result vector.
+
+`W/T/L` denotes the numbers of datasets on which SetAD obtains a higher, equal,
+or lower mean score than the corresponding baseline.
+
+### AUC-PR significance tests
+
+| Baseline | Mean difference (SetAD - baseline) | W/T/L | Wilcoxon W | Raw p | Holm-adjusted p | Significant (adjusted p < 0.05) |
+|---|---:|---:|---:|---:|---:|:---:|
+| GANomaly | +0.38724 | 10/0/0 | 0 | 0.001953 | 0.011719 | Yes |
+| REPEN | +0.07709 | 10/0/0 | 0 | 0.001953 | 0.011719 | Yes |
+| DevNet | +0.03939 | 9/0/1 | 1 | 0.003906 | 0.011719 | Yes |
+| DeepSAD | +0.11616 | 10/0/0 | 0 | 0.001953 | 0.011719 | Yes |
+| FEAWAD | +0.09103 | 10/0/0 | 0 | 0.001953 | 0.011719 | Yes |
+| PReNet | +0.05333 | 10/0/0 | 0 | 0.001953 | 0.011719 | Yes |
+
+### AUC-ROC significance tests
+
+| Baseline | Mean difference (SetAD - baseline) | W/T/L | Wilcoxon W | Raw p | Holm-adjusted p | Significant (adjusted p < 0.05) |
+|---|---:|---:|---:|---:|---:|:---:|
+| GANomaly | +0.21518 | 10/0/0 | 0 | 0.001953 | 0.011719 | Yes |
+| REPEN | +0.01991 | 7/0/3 | 12 | 0.130859 | 0.130859 | No |
+| DevNet | +0.02911 | 9/0/1 | 3 | 0.009766 | 0.039062 | Yes |
+| DeepSAD | +0.06025 | 9/0/1 | 3 | 0.009766 | 0.039062 | Yes |
+| FEAWAD | +0.04035 | 8/0/2 | 4 | 0.013672 | 0.039062 | Yes |
+| PReNet | +0.03541 | 10/0/0 | 0 | 0.001953 | 0.011719 | Yes |
+
+### Summary
+
+For AUC-PR, SetAD is significantly better than all six baselines with complete results after Holm correction.
+
+For AUC-ROC, SetAD is significantly better than GANomaly, DevNet, DeepSAD,
+  FEAWAD, and PReNet after Holm correction. The difference from REPEN is not
+  statistically significant.
+  
+  The tests above are computed from the four-decimal dataset means displayed in
+  the tables. For the final archival version, the same script should be run on
+  the unrounded dataset-level means if those values are available.
+
+

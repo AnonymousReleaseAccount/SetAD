@@ -35,6 +35,8 @@ def read_from_ODDS():
 
 def read_from_adbench():
     from adbench.datasets.data_generator import DataGenerator
+# Please disable ADBench's default subsampling for large datasets so that
+# all methods are evaluated on the full datasets.
     D = DataGenerator(generate_duplicates=False, test_size=0.95)
     D.dataset = '11_donors'
     d = D.generator(la=1.0) 

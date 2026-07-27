@@ -38,7 +38,7 @@ def read_from_adbench():
 # Please disable ADBench's default subsampling for large datasets so that
 # all methods are evaluated on the full datasets.
     D = DataGenerator(generate_duplicates=False, test_size=0.95)
-    D.dataset = '11_donors'
+    D.dataset = '9_census'
     d = D.generator(la=1.0) 
     # print(d['X_train'].shape, d['y_train'].shape)
     # print(sum(d['y_train']), sum(d['y_test']))

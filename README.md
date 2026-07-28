@@ -71,7 +71,7 @@ the sample standard deviation (`ddof=1`) across the 10 runs.
 
 ## Statistical Significance Across Datasets
 
-For each metric, we compare SetAD with every baseline that has results on all
+For each metric, we compare SetAD with 6 baselines that has results on all
 10 datasets: GANomaly, REPEN, DevNet, DeepSAD, FEAWAD, and PReNet. Each dataset
 contributes one paired observation, namely the 10-run mean reported above.
 We use a two-sided exact Wilcoxon signed-rank test across the 10 datasets.

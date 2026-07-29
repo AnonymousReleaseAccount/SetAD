@@ -383,7 +383,7 @@ def parse_args():
     parser.add_argument('--learning_rate', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--labeled_ratio', default=0.05, type=float, help='Ratio of labeled anomalies')
     parser.add_argument('--contamination_rate', default=0.02, type=float, help='Ratio of unlabeled anomalies in the training set')
-    parser.add_argument('--seq_len', default=2, type=int, help='Length of the sequence')
+    parser.add_argument('--seq_len', default=8, type=int, help='Length of the sequence')
     parser.add_argument('-o', default=False, type=str, help='Write output?')
     return parser.parse_args()
 

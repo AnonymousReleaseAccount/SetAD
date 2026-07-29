@@ -30,7 +30,7 @@ python SetAD-main.py --dataset Your-dataset --batch_size batch-size --labeled_ra
 The program reads the requested dataset from the `processed_data` directory.
 The main paper uses contamination rate `0.02` and the labeled-anomaly ratios
 listed in the dataset statistics table: `0.05` for Cardiotocography,
-Mammography, MNIST, and Fraud, and `0.01` for SpamBase, Shuttle, Celeba, Cover,
+Mammography, Mnist, and Fraud, and `0.01` for SpamBase, Shuttle, Celeba, Cover,
 Campaign, and Census. The default SetAD set size is `k=8`.
 
 ## Main Results with Error Bars
